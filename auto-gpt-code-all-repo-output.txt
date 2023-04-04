@@ -1,0 +1,1904 @@
+The following text is a Git repository with code. The structure of the text are sections that begin with ----, followed by a single line containing the file path and file name, followed by a variable amount of lines containing the file contents. The text representing the Git repository ends when the symbols --END-- are encounted. Any further text beyond --END-- are meant to be interpreted as instructions using the aforementioned Git repository as context.
+----
+requirements.txt
+beautifulsoup4
+colorama
+googlesearch_python
+openai
+playsound
+readability_lxml
+requests
+docker
+----
+Dockerfile
+FROM python:3.11
+
+WORKDIR /app
+COPY scripts/ /app
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "main.py"]
+
+----
+README2.MD
+# prepare
+```
+sudo apt update
+sudo apt -y upgrade
+sudo apt install python3-pip
+```
+
+# repo
+```
+git clone https://github.com/Torantulino/Auto-GPT.git
+cd Auto-GPT && mv requirements.txt requirements.orig.txt && nano requirements.txt
+pip3 install -r requirements.txt
+```
+
+# run
+```
+python3 scripts/main.py --gpt3only
+```
+
+# yes and continue continuously
+```
+echo "y" | python3 scripts/main.py --gpt3only --continuous > output.txt 2>&1
+```
+----
+last_run_ai_settings.yaml
+ai_goals:
+- Check folder ./notion-test and make order there in accordance with Zettelkasten
+  system. Make links between notes if needed. And make better order then now. You
+  have an access to my filesystem to doit.
+ai_name: Note Assistant
+ai_role: You'll need to sort out and make order in my notes in accordance with Zettelkasten
+  system
+
+----
+README.md
+# Auto-GPT: An Autonomous GPT-4 Experiment
+![GitHub Repo stars](https://img.shields.io/github/stars/Torantulino/auto-gpt?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/siggravitas?style=social)
+[![](https://dcbadge.vercel.app/api/server/PQ7VX6TY4t?style=flat)](https://discord.gg/PQ7VX6TY4t)
+
+Auto-GPT is an experimental open-source application showcasing the capabilities of the GPT-4 language model. This program, driven by GPT-4, autonomously develops and manages businesses to increase net worth. As one of the first examples of GPT-4 running fully autonomously, Auto-GPT pushes the boundaries of what is possible with AI.
+
+### Demo (30/03/2023):
+https://user-images.githubusercontent.com/22963551/228855501-2f5777cf-755b-4407-a643-c7299e5b6419.mp4
+
+
+## 💖 Help Fund Auto-GPT's Development
+<p align="center">
+If you can spare a coffee, you can help to cover the API costs of developing Auto-GPT and help push the boundaries of fully autonomous AI!
+A full day of development can easily cost as much as $20 in API costs, which for a free project is quite limiting.
+Your support is greatly appreciated
+</p>
+
+<p align="center">
+ Development of this free, open-source project is made possible by all the <a href="https://github.com/Torantulino/Auto-GPT/graphs/contributors">contributors</a> and <a href="https://github.com/sponsors/Torantulino">sponsors</a>. If you'd like to sponsor this project and have your avatar or company logo appear below <a href="https://github.com/sponsors/Torantulino">click here</a>. 💖
+<p align="center">
+<p align="center">
+<a href="https://github.com/nocodeclarity"><img src="https://github.com/nocodeclarity.png" width="50px" alt="nocodeclarity" /></a>&nbsp;&nbsp;<a href="https://github.com/tjarmain"><img src="https://github.com/tjarmain.png" width="50px" alt="tjarmain" /></a>&nbsp;&nbsp;<a href="https://github.com/tekelsey"><img src="https://github.com/tekelsey.png" width="50px" alt="tekelsey" /></a>&nbsp;&nbsp;<a href="https://github.com/robinicus"><img src="https://github.com/robinicus.png" width="50px" alt="robinicus" /></a>&nbsp;&nbsp;<a href="https://github.com/digisomni"><img src="https://github.com/digisomni.png" width="50px" alt="digisomni" /></a>&nbsp;&nbsp;
+</p>
+<p align="center">
+<a href="https://github.com/alexisneuhaus"><img src="https://github.com/alexisneuhaus.png" width="30px" alt="alexisneuhaus" /></a>&nbsp;&nbsp;<a href="https://github.com/iokode"><img src="https://github.com/iokode.png" width="30px" alt="iokode" /></a>&nbsp;&nbsp;<a href="https://github.com/jaumebalust"><img src="https://github.com/jaumebalust.png" width="30px" alt="jaumebalust" /></a>&nbsp;&nbsp;
+</p>
+
+
+## Table of Contents
+
+- [Features](#-features)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Limitations](#-limitations)
+- [Disclaimer](#-disclaimer)
+- [Connect with Us on Twitter ](#-connect-with-us-on-twitter)
+
+
+## 🚀 Features
+
+- 🌐 Internet access for searches and information gathering
+- 💾 Long-Term and Short-Term memory management
+- 🧠 GPT-4 instances for text generation
+- 🔗 Access to popular websites and platforms
+- 🗃️ File storage and summarization with GPT-3.5
+
+## 📋 Requirements
+- [Python 3.7 or later](https://www.tutorialspoint.com/how-to-install-python-in-windows)
+- OpenAI API key
+
+Optional:
+- ElevenLabs Key (If you want the AI to speak)
+
+## 💾 Installation
+
+To install Auto-GPT, follow these steps:
+
+0. Make sure you have all the **requirements** above, if not, install/get them.
+
+*The following commands should be executed in a CMD, Bash or Powershell window. To do this, go to a folder on your computer, click in the folder path at the top and type CMD, then press enter.*
+
+1. Clone the repository:
+For this step you need Git installed, but you can just download the zip file instead by clicking the button at the top of this page ☝️
+```
+git clone https://github.com/Torantulino/Auto-GPT.git
+```
+
+2. Navigate to the project directory:
+*(Type this into your CMD window, you're aiming to navigate the CMD window to the repository you just downloaded)*
+```
+$ cd 'Auto-GPT'
+```
+
+3. Install the required dependencies:
+*(Again, type this into your CMD window)*
+```
+pip install -r requirements.txt
+```
+
+4. Rename `.env.template` to `.env` and fill in your `OPENAI_API_KEY`. If you plan to use Speech Mode, fill in your `ELEVEN_LABS_API_KEY` as well.
+  - Obtain your OpenAI API key from: https://platform.openai.com/account/api-keys.
+  - Obtain your ElevenLabs API key from: https://elevenlabs.io. You can view your xi-api-key using the "Profile" tab on the website.
+
+## 🔧 Usage
+
+1. Run the `main.py` Python script in your terminal:
+*(Type this into your CMD window)*
+```
+python scripts/main.py
+```
+2. After each of AUTO-GPT's actions, type "NEXT COMMAND" to authorise them to continue.
+3. To exit the program, type "exit" and press Enter.
+
+## 🗣️ Speech Mode
+Use this to use TTS for Auto-GPT
+```
+python scripts/main.py --speak
+
+```
+
+## 💀 Continuous Mode ⚠️
+Run the AI **without** user authorisation, 100% automated.
+Continuous mode is not recommended. 
+It is potentially dangerous and may cause your AI to run forever or carry out actions you would not usually authorise. 
+Use at your own risk.
+1. Run the `main.py` Python script in your terminal:
+```
+python scripts/main.py --continuous
+
+```
+2. To exit the program, press Ctrl + C
+
+## GPT3.5 ONLY Mode
+If you don't have access to the GPT4 api, this mode will allow you to use Auto-GPT!
+```
+python scripts/main.py --gpt3only
+```
+
+## ⚠️ Limitations
+This experiment aims to showcase the potential of GPT-4 but comes with some limitations:
+
+1. Not a polished application or product, just an experiment
+2. May not perform well in complex, real-world business scenarios. In fact, if it actually does, please share your results!
+3. Quite expensive to run, so set and monitor your API key limits with OpenAI!
+
+## 🛡 Disclaimer
+
+Disclaimer
+This project, Auto-GPT, is an experimental application and is provided "as-is" without any warranty, express or implied. By using this software, you agree to assume all risks associated with its use, including but not limited to data loss, system failure, or any other issues that may arise.
+
+The developers and contributors of this project do not accept any responsibility or liability for any losses, damages, or other consequences that may occur as a result of using this software. You are solely responsible for any decisions and actions taken based on the information provided by Auto-GPT.
+
+**Please note that the use of the GPT-4 language model can be expensive due to its token usage.** By utilizing this project, you acknowledge that you are responsible for monitoring and managing your own token usage and the associated costs. It is highly recommended to check your OpenAI API usage regularly and set up any necessary limits or alerts to prevent unexpected charges.
+
+As an autonomous experiment, Auto-GPT may generate content or take actions that are not in line with real-world business practices or legal requirements. It is your responsibility to ensure that any actions or decisions made based on the output of this software comply with all applicable laws, regulations, and ethical standards. The developers and contributors of this project shall not be held responsible for any consequences arising from the use of this software.
+
+By using Auto-GPT, you agree to indemnify, defend, and hold harmless the developers, contributors, and any affiliated parties from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from your use of this software or your violation of these terms.
+
+## 🐦 Connect with Us on Twitter 
+
+Stay up-to-date with the latest news, updates, and insights about Auto-GPT by following our Twitter accounts. Engage with the developer and the AI's own account for interesting discussions, project updates, and more.
+
+- **Developer**: Follow [@siggravitas](https://twitter.com/siggravitas) for insights into the development process, project updates, and related topics from the creator of Entrepreneur-GPT.
+- **Entrepreneur-GPT**: Join the conversation with the AI itself by following [@En_GPT](https://twitter.com/En_GPT). Share your experiences, discuss the AI's outputs, and engage with the growing community of users.
+
+We look forward to connecting with you and hearing your thoughts, ideas, and experiences with Auto-GPT. Join us on Twitter and let's explore the future of AI together!
+
+
+----
+.env.template
+OPENAI_API_KEY=your-openai-api-key
+ELEVENLABS_API_KEY=your-elevenlabs-api-key
+SMART_LLM_MODEL="gpt-4"
+FAST_LLM_MODEL="gpt-3.5-turbo"
+----
+.gitignore
+scripts/keys.py
+scripts/*json
+scripts/node_modules/
+scripts/__pycache__/keys.cpython-310.pyc
+package-lock.json
+*.pyc
+scripts/auto_gpt_workspace/*
+*.mpeg
+.env
+last_run_ai_settings.yaml
+outputs/*
+
+auto_gpt_workspace-*
+auto_gpt_workspace2
+.DS_Store
+----
+requirements-alternative.txt
+# I wasn't having any luck installing the requirements.txt file in Mac or Linux
+# But this seems to work.
+# The biggest difference is docker 5 instead of 6, because of this silliness:
+#
+# The conflict is caused by:
+#     The user requested requests>=2.26.0
+#     docker 6.0.1 depends on requests>=2.26.0
+#     googlesearch-python 1.1.0 depends on requests==2.25.1
+docker==5.0.3
+
+# I'd love to fix this in a cleaner way
+
+# Now go ahead and install the rest of what requirements.txt says:
+-r requirements.txt
+
+----
+tests/json_tests.py
+import unittest
+import os
+import sys
+# Probably a better way:
+sys.path.append(os.path.abspath('../scripts'))
+from json_parser import fix_and_parse_json
+
+class TestParseJson(unittest.TestCase):
+    def test_valid_json(self):
+        # Test that a valid JSON string is parsed correctly
+        json_str = '{"name": "John", "age": 30, "city": "New York"}'
+        obj = fix_and_parse_json(json_str)
+        self.assertEqual(obj, {"name": "John", "age": 30, "city": "New York"})
+    
+    def test_invalid_json_minor(self):
+        # Test that an invalid JSON string can be fixed with gpt
+        json_str = '{"name": "John", "age": 30, "city": "New York",}'
+        self.assertEqual(fix_and_parse_json(json_str, try_to_fix_with_gpt=False), {"name": "John", "age": 30, "city": "New York"})
+    
+    def test_invalid_json_major_with_gpt(self):
+        # Test that an invalid JSON string raises an error when try_to_fix_with_gpt is False
+        json_str = 'BEGIN: "name": "John" - "age": 30 - "city": "New York" :END'
+        self.assertEqual(fix_and_parse_json(json_str, try_to_fix_with_gpt=True), {"name": "John", "age": 30, "city": "New York"})
+
+    def test_invalid_json_major_without_gpt(self):
+        # Test that a REALLY invalid JSON string raises an error when try_to_fix_with_gpt is False
+        json_str = 'BEGIN: "name": "John" - "age": 30 - "city": "New York" :END'
+        # Assert that this raises an exception:
+        with self.assertRaises(Exception):
+            fix_and_parse_json(json_str, try_to_fix_with_gpt=False)
+
+    def test_invalid_json_leading_sentence_with_gpt(self):
+        # Test that a REALLY invalid JSON string raises an error when try_to_fix_with_gpt is False
+        json_str = """I suggest we start by browsing the repository to find any issues that we can fix.
+
+{
+    "command": {
+        "name": "browse_website",
+        "args":{
+            "url": "https://github.com/Torantulino/Auto-GPT"
+        }
+    },
+    "thoughts":
+    {
+        "text": "I suggest we start browsing the repository to find any issues that we can fix.",
+        "reasoning": "Browsing the repository will give us an idea of the current state of the codebase and identify any issues that we can address to improve the repo.",
+        "plan": "- Look through the repository to find any issues.\n- Investigate any issues to determine what needs to be fixed\n- Identify possible solutions to fix the issues\n- Open Pull Requests with fixes",
+        "criticism": "I should be careful while browsing so as not to accidentally introduce any new bugs or issues.",
+        "speak": "I will start browsing the repository to find any issues we can fix."
+    }
+}"""
+        good_obj = {
+          "command": {
+              "name": "browse_website",
+              "args":{
+                  "url": "https://github.com/Torantulino/Auto-GPT"
+              }
+          },
+          "thoughts":
+          {
+              "text": "I suggest we start browsing the repository to find any issues that we can fix.",
+              "reasoning": "Browsing the repository will give us an idea of the current state of the codebase and identify any issues that we can address to improve the repo.",
+              "plan": "- Look through the repository to find any issues.\n- Investigate any issues to determine what needs to be fixed\n- Identify possible solutions to fix the issues\n- Open Pull Requests with fixes",
+              "criticism": "I should be careful while browsing so as not to accidentally introduce any new bugs or issues.",
+              "speak": "I will start browsing the repository to find any issues we can fix."
+          }
+      }
+        # Assert that this raises an exception:
+        self.assertEqual(fix_and_parse_json(json_str, try_to_fix_with_gpt=False), good_obj)
+
+
+
+    def test_invalid_json_leading_sentence_with_gpt(self):
+        # Test that a REALLY invalid JSON string raises an error when try_to_fix_with_gpt is False
+        json_str = """I will first need to browse the repository (https://github.com/Torantulino/Auto-GPT) and identify any potential bugs that need fixing. I will use the "browse_website" command for this.
+
+{
+    "command": {
+        "name": "browse_website",
+        "args":{
+            "url": "https://github.com/Torantulino/Auto-GPT"
+        }
+    },
+    "thoughts":
+    {
+        "text": "Browsing the repository to identify potential bugs",
+        "reasoning": "Before fixing bugs, I need to identify what needs fixing. I will use the 'browse_website' command to analyze the repository.",
+        "plan": "- Analyze the repository for potential bugs and areas of improvement",
+        "criticism": "I need to ensure I am thorough and pay attention to detail while browsing the repository.",
+        "speak": "I am browsing the repository to identify potential bugs."
+    }
+}"""
+        good_obj = {
+    "command": {
+        "name": "browse_website",
+        "args":{
+            "url": "https://github.com/Torantulino/Auto-GPT"
+        }
+    },
+    "thoughts":
+    {
+        "text": "Browsing the repository to identify potential bugs",
+        "reasoning": "Before fixing bugs, I need to identify what needs fixing. I will use the 'browse_website' command to analyze the repository.",
+        "plan": "- Analyze the repository for potential bugs and areas of improvement",
+        "criticism": "I need to ensure I am thorough and pay attention to detail while browsing the repository.",
+        "speak": "I am browsing the repository to identify potential bugs."
+    }
+}
+        # Assert that this raises an exception:
+        self.assertEqual(fix_and_parse_json(json_str, try_to_fix_with_gpt=False), good_obj)
+
+
+
+if __name__ == '__main__':
+    unittest.main()
+----
+scripts/browse.py
+import requests
+from bs4 import BeautifulSoup
+from config import Config
+from llm_utils import create_chat_completion
+
+cfg = Config()
+
+def scrape_text(url):
+    response = requests.get(url)
+
+    # Check if the response contains an HTTP error
+    if response.status_code >= 400:
+        return "Error: HTTP " + str(response.status_code) + " error"
+
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    for script in soup(["script", "style"]):
+        script.extract()
+
+    text = soup.get_text()
+    lines = (line.strip() for line in text.splitlines())
+    chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+    text = '\n'.join(chunk for chunk in chunks if chunk)
+
+    return text
+
+
+def extract_hyperlinks(soup):
+    hyperlinks = []
+    for link in soup.find_all('a', href=True):
+        hyperlinks.append((link.text, link['href']))
+    return hyperlinks
+
+
+def format_hyperlinks(hyperlinks):
+    formatted_links = []
+    for link_text, link_url in hyperlinks:
+        formatted_links.append(f"{link_text} ({link_url})")
+    return formatted_links
+
+
+def scrape_links(url):
+    response = requests.get(url)
+
+    # Check if the response contains an HTTP error
+    if response.status_code >= 400:
+        return "error"
+
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    for script in soup(["script", "style"]):
+        script.extract()
+
+    hyperlinks = extract_hyperlinks(soup)
+
+    return format_hyperlinks(hyperlinks)
+
+
+def split_text(text, max_length=8192):
+    paragraphs = text.split("\n")
+    current_length = 0
+    current_chunk = []
+
+    for paragraph in paragraphs:
+        if current_length + len(paragraph) + 1 <= max_length:
+            current_chunk.append(paragraph)
+            current_length += len(paragraph) + 1
+        else:
+            yield "\n".join(current_chunk)
+            current_chunk = [paragraph]
+            current_length = len(paragraph) + 1
+
+    if current_chunk:
+        yield "\n".join(current_chunk)
+
+
+def summarize_text(text, is_website=True):
+    if text == "":
+        return "Error: No text to summarize"
+
+    print("Text length: " + str(len(text)) + " characters")
+    summaries = []
+    chunks = list(split_text(text))
+
+    for i, chunk in enumerate(chunks):
+        print("Summarizing chunk " + str(i + 1) + " / " + str(len(chunks)))
+        if is_website:
+            messages = [
+                {
+                    "role": "user",
+                    "content": "Please summarize the following website text, do not describe the general website, but instead concisely extract the specific information this subpage contains.: " +
+                    chunk},
+            ]
+        else:
+            messages = [
+                {
+                    "role": "user",
+                    "content": "Please summarize the following text, focusing on extracting concise and specific information: " +
+                    chunk},
+            ]
+
+        summary = create_chat_completion(
+            model=cfg.fast_llm_model,
+            messages=messages,
+            max_tokens=300,
+        )
+        summaries.append(summary)
+    print("Summarized " + str(len(chunks)) + " chunks.")
+
+    combined_summary = "\n".join(summaries)
+
+    # Summarize the combined summary
+    if is_website:
+        messages = [
+            {
+                "role": "user",
+                "content": "Please summarize the following website text, do not describe the general website, but instead concisely extract the specific information this subpage contains.: " +
+                combined_summary},
+        ]
+    else:
+        messages = [
+            {
+                "role": "user",
+                "content": "Please summarize the following text, focusing on extracting concise and specific infomation: " +
+                combined_summary},
+        ]
+
+    final_summary = create_chat_completion(
+        model=cfg.fast_llm_model,
+        messages=messages,
+        max_tokens=300,
+    )
+
+    return final_summary
+
+----
+scripts/call_ai_function.py
+from config import Config
+cfg = Config()
+
+from llm_utils import create_chat_completion
+
+# This is a magic function that can do anything with no-code. See
+# https://github.com/Torantulino/AI-Functions for more info.
+def call_ai_function(function, args, description, model=cfg.smart_llm_model):
+    # For each arg, if any are None, convert to "None":
+    args = [str(arg) if arg is not None else "None" for arg in args]
+    # parse args to comma seperated string
+    args = ", ".join(args)
+    messages = [
+        {
+            "role": "system",
+            "content": f"You are now the following python function: ```# {description}\n{function}```\n\nOnly respond with your `return` value.",
+        },
+        {"role": "user", "content": args},
+    ]
+
+    response = create_chat_completion(
+        model=model, messages=messages, temperature=0
+    )
+
+    return response
+
+----
+scripts/speak.py
+import os
+from playsound import playsound
+import requests
+from config import Config
+cfg = Config()
+
+# TODO: Nicer names for these ids
+voices = ["ErXwobaYiN019PkySvjV", "EXAVITQu4vr4xnSDxMaL"]
+
+tts_headers = {
+    "Content-Type": "application/json",
+    "xi-api-key": cfg.elevenlabs_api_key
+}
+
+def say_text(text, voice_index=0):
+    tts_url = "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}".format(
+        voice_id=voices[voice_index])
+
+    formatted_message = {"text": text}
+    response = requests.post(
+        tts_url, headers=tts_headers, json=formatted_message)
+
+    if response.status_code == 200:
+        with open("speech.mpeg", "wb") as f:
+            f.write(response.content)
+        playsound("speech.mpeg")
+        # Delete audio file
+        os.remove("speech.mpeg")
+    else:
+        print("Request failed with status code:", response.status_code)
+        print("Response content:", response.content)
+
+----
+scripts/config.py
+import os
+import openai
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
+
+class Singleton(type):
+    """
+    Singleton metaclass for ensuring only one instance of a class.
+    """
+
+    _instances = {}
+
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super(
+                Singleton, cls).__call__(
+                *args, **kwargs)
+        return cls._instances[cls]
+
+
+class Config(metaclass=Singleton):
+    """
+    Configuration class to store the state of bools for different scripts access.
+    """
+
+    def __init__(self):
+        self.continuous_mode = False
+        self.speak_mode = False
+        # TODO - make these models be self-contained, using langchain, so we can configure them once and call it good 
+        self.fast_llm_model = os.getenv("FAST_LLM_MODEL", "gpt-3.5-turbo") 
+        self.smart_llm_model = os.getenv("SMART_LLM_MODEL", "gpt-4")
+        self.fast_token_limit = int(os.getenv("FAST_TOKEN_LIMIT", 4000))
+        self.smart_token_limit = int(os.getenv("SMART_TOKEN_LIMIT", 8000))
+        
+        self.openai_api_key = os.getenv("OPENAI_API_KEY")
+        self.elevenlabs_api_key = os.getenv("ELEVENLABS_API_KEY")
+
+        # Initialize the OpenAI API client
+        openai.api_key = self.openai_api_key
+
+
+    def set_continuous_mode(self, value: bool):
+        self.continuous_mode = value
+
+    def set_speak_mode(self, value: bool):
+        self.speak_mode = value
+
+    def set_fast_llm_model(self, value: str):
+        self.fast_llm_model = value
+
+    def set_smart_llm_model(self, value: str):
+        self.smart_llm_model = value
+
+    def set_fast_token_limit(self, value: int):
+        self.fast_token_limit = value
+
+    def set_smart_token_limit(self, value: int):
+        self.smart_token_limit = value
+
+    def set_openai_api_key(self, value: str):
+        self.apiopenai_api_key_key = value
+    
+    def set_elevenlabs_api_key(self, value: str):
+        self.elevenlabs_api_key = value
+
+
+        
+
+----
+scripts/memory.py
+permanent_memory = []
+
+----
+scripts/token_counter.py
+import tiktoken
+from typing import List, Dict
+
+def count_message_tokens(messages : List[Dict[str, str]], model : str = "gpt-3.5-turbo-0301") -> int:
+    """
+    Returns the number of tokens used by a list of messages.
+
+    Args:
+    messages (list): A list of messages, each of which is a dictionary containing the role and content of the message.
+    model (str): The name of the model to use for tokenization. Defaults to "gpt-3.5-turbo-0301".
+
+    Returns:
+    int: The number of tokens used by the list of messages.
+    """
+    try:
+        encoding = tiktoken.encoding_for_model(model)
+    except KeyError:
+        print("Warning: model not found. Using cl100k_base encoding.")
+        encoding = tiktoken.get_encoding("cl100k_base")
+    if model == "gpt-3.5-turbo":
+        # !Node: gpt-3.5-turbo may change over time. Returning num tokens assuming gpt-3.5-turbo-0301.")
+        return count_message_tokens(messages, model="gpt-3.5-turbo-0301")
+    elif model == "gpt-4":
+        # !Note: gpt-4 may change over time. Returning num tokens assuming gpt-4-0314.")
+        return count_message_tokens(messages, model="gpt-4-0314")
+    elif model == "gpt-3.5-turbo-0301":
+        tokens_per_message = 4  # every message follows <|start|>{role/name}\n{content}<|end|>\n
+        tokens_per_name = -1  # if there's a name, the role is omitted
+    elif model == "gpt-4-0314":
+        tokens_per_message = 3
+        tokens_per_name = 1
+    else:
+        raise NotImplementedError(f"""num_tokens_from_messages() is not implemented for model {model}. See https://github.com/openai/openai-python/blob/main/chatml.md for information on how messages are converted to tokens.""")
+    num_tokens = 0
+    for message in messages:
+        num_tokens += tokens_per_message
+        for key, value in message.items():
+            num_tokens += len(encoding.encode(value))
+            if key == "name":
+                num_tokens += tokens_per_name
+    num_tokens += 3  # every reply is primed with <|start|>assistant<|message|>
+    return num_tokens
+
+def count_string_tokens(string: str, model_name: str) -> int:
+    """
+    Returns the number of tokens in a text string.
+
+    Args:
+    string (str): The text string.
+    model_name (str): The name of the encoding to use. (e.g., "gpt-3.5-turbo")
+
+    Returns:
+    int: The number of tokens in the text string.
+    """
+    encoding = tiktoken.encoding_for_model(model_name)
+    num_tokens = len(encoding.encode(string))
+    return num_tokens
+
+----
+scripts/ai_functions.py
+from typing import List, Optional
+import json
+from config import Config
+from call_ai_function import call_ai_function
+from json_parser import fix_and_parse_json
+cfg = Config()
+
+# Evaluating code
+
+def evaluate_code(code: str) -> List[str]:
+    function_string = "def analyze_code(code: str) -> List[str]:"
+    args = [code]
+    description_string = """Analyzes the given code and returns a list of suggestions for improvements."""
+
+    result_string = call_ai_function(function_string, args, description_string)
+    
+    return result_string
+
+
+# Improving code
+
+def improve_code(suggestions: List[str], code: str) -> str:
+    function_string = (
+        "def generate_improved_code(suggestions: List[str], code: str) -> str:"
+    )
+    args = [json.dumps(suggestions), code]
+    description_string = """Improves the provided code based on the suggestions provided, making no other changes."""
+
+    result_string = call_ai_function(function_string, args, description_string)
+    return result_string
+
+
+# Writing tests
+
+
+def write_tests(code: str, focus: List[str]) -> str:
+    function_string = (
+        "def create_test_cases(code: str, focus: Optional[str] = None) -> str:"
+    )
+    args = [code, json.dumps(focus)]
+    description_string = """Generates test cases for the existing code, focusing on specific areas if required."""
+
+    result_string = call_ai_function(function_string, args, description_string)
+    return result_string
+
+
+
+----
+scripts/chat.py
+import time
+import openai
+from dotenv import load_dotenv
+from config import Config
+import token_counter
+
+cfg = Config()
+
+from llm_utils import create_chat_completion
+
+
+def create_chat_message(role, content):
+    """
+    Create a chat message with the given role and content.
+
+    Args:
+    role (str): The role of the message sender, e.g., "system", "user", or "assistant".
+    content (str): The content of the message.
+
+    Returns:
+    dict: A dictionary containing the role and content of the message.
+    """
+    return {"role": role, "content": content}
+
+
+
+# TODO: Change debug from hardcode to argument
+def chat_with_ai(
+        prompt,
+        user_input,
+        full_message_history,
+        permanent_memory,
+        token_limit,
+        debug=False):
+    while True:
+        try:
+            """
+            Interact with the OpenAI API, sending the prompt, user input, message history, and permanent memory.
+
+            Args:
+            prompt (str): The prompt explaining the rules to the AI.
+            user_input (str): The input from the user.
+            full_message_history (list): The list of all messages sent between the user and the AI.
+            permanent_memory (list): The list of items in the AI's permanent memory.
+            token_limit (int): The maximum number of tokens allowed in the API call.
+
+            Returns:
+            str: The AI's response.
+            """
+            model = cfg.fast_llm_model # TODO: Change model from hardcode to argument
+            # Reserve 1000 tokens for the response
+            if debug:
+                print(f"Token limit: {token_limit}")
+            send_token_limit = token_limit - 1000
+
+            current_context = [
+                create_chat_message(
+                    "system", prompt), create_chat_message(
+                    "system", f"Permanent memory: {permanent_memory}")]                
+
+            # Add messages from the full message history until we reach the token limit
+            next_message_to_add_index = len(full_message_history) - 1
+            current_tokens_used = 0
+            insertion_index = len(current_context)
+
+            # Count the currently used tokens
+            current_tokens_used = token_counter.count_message_tokens(current_context, model)
+            current_tokens_used += token_counter.count_message_tokens([create_chat_message("user", user_input)], model) # Account for user input (appended later)
+
+            while next_message_to_add_index >= 0:
+                # print (f"CURRENT TOKENS USED: {current_tokens_used}")
+                message_to_add = full_message_history[next_message_to_add_index]
+
+                tokens_to_add = token_counter.count_message_tokens([message_to_add], model)
+                if current_tokens_used + tokens_to_add > send_token_limit:
+                    break
+
+                # Add the most recent message to the start of the current context, after the two system prompts.
+                current_context.insert(insertion_index, full_message_history[next_message_to_add_index])
+
+                # Count the currently used tokens
+                current_tokens_used += tokens_to_add
+                
+                # Move to the next most recent message in the full message history
+                next_message_to_add_index -= 1
+
+            # Append user input, the length of this is accounted for above
+            current_context.extend([create_chat_message("user", user_input)])
+
+            # Calculate remaining tokens
+            tokens_remaining = token_limit - current_tokens_used
+            # assert tokens_remaining >= 0, "Tokens remaining is negative. This should never happen, please submit a bug report at https://www.github.com/Torantulino/Auto-GPT"
+
+            # Debug print the current context
+            if debug:
+                print(f"Token limit: {token_limit}")
+                print(f"Send Token Count: {current_tokens_used}")
+                print(f"Tokens remaining for response: {tokens_remaining}")
+                print("------------ CONTEXT SENT TO AI ---------------")
+                for message in current_context:
+                    # Skip printing the prompt
+                    if message["role"] == "system" and message["content"] == prompt:
+                        continue
+                    print(
+                        f"{message['role'].capitalize()}: {message['content']}")
+                    print()
+                print("----------- END OF CONTEXT ----------------")
+
+            # TODO: use a model defined elsewhere, so that model can contain temperature and other settings we care about
+            assistant_reply = create_chat_completion(
+                model=model,
+                messages=current_context,
+                max_tokens=tokens_remaining,
+            )
+
+            # Update full message history
+            full_message_history.append(
+                create_chat_message(
+                    "user", user_input))
+            full_message_history.append(
+                create_chat_message(
+                    "assistant", assistant_reply))
+
+            return assistant_reply
+        except openai.error.RateLimitError:
+            # TODO: WHen we switch to langchain, this is built in
+            print("Error: ", "API Rate Limit Reached. Waiting 10 seconds...")
+            time.sleep(10)
+
+----
+scripts/llm_utils.py
+import openai
+from config import Config
+cfg = Config()
+
+openai.api_key = cfg.openai_api_key
+
+# Overly simple abstraction until we create something better
+def create_chat_completion(messages, model=None, temperature=None, max_tokens=None)->str:
+    response = openai.ChatCompletion.create(
+        model=model,
+        messages=messages,
+        temperature=temperature,
+        max_tokens=max_tokens
+    )
+
+    return response.choices[0].message["content"]
+
+----
+scripts/agent_manager.py
+from llm_utils import create_chat_completion
+
+next_key = 0
+agents = {}  # key, (task, full_message_history, model)
+
+# Create new GPT agent
+# TODO: Centralise use of create_chat_completion() to globally enforce token limit
+
+def create_agent(task, prompt, model):
+    global next_key
+    global agents
+
+    messages = [{"role": "user", "content": prompt}, ]
+
+    # Start GTP3 instance
+    agent_reply = create_chat_completion(
+        model=model,
+        messages=messages,
+    )
+
+    # Update full message history
+    messages.append({"role": "assistant", "content": agent_reply})
+
+    key = next_key
+    # This is done instead of len(agents) to make keys unique even if agents
+    # are deleted
+    next_key += 1
+
+    agents[key] = (task, messages, model)
+
+    return key, agent_reply
+
+
+def message_agent(key, message):
+    global agents
+
+    task, messages, model = agents[int(key)]
+
+    # Add user message to message history before sending to agent
+    messages.append({"role": "user", "content": message})
+
+    # Start GTP3 instance
+    agent_reply = create_chat_completion(
+        model=model,
+        messages=messages,
+    )
+
+    # Update full message history
+    messages.append({"role": "assistant", "content": agent_reply})
+
+    return agent_reply
+
+
+def list_agents():
+    global agents
+
+    # Return a list of agent keys and their tasks
+    return [(key, task) for key, (task, _, _) in agents.items()]
+
+
+def delete_agent(key):
+    global agents
+
+    try:
+        del agents[int(key)]
+        return True
+    except KeyError:
+        return False
+
+----
+scripts/ai_config.py
+import yaml
+import data
+
+
+class AIConfig:
+    def __init__(self, ai_name="", ai_role="", ai_goals=[]):
+        self.ai_name = ai_name
+        self.ai_role = ai_role
+        self.ai_goals = ai_goals
+
+    # Soon this will go in a folder where it remembers more stuff about the run(s)
+    SAVE_FILE = "last_run_ai_settings.yaml"
+
+    @classmethod
+    def load(cls, config_file=SAVE_FILE):
+        # Load variables from yaml file if it exists
+        try:
+            with open(config_file) as file:
+                config_params = yaml.load(file, Loader=yaml.FullLoader)
+        except FileNotFoundError:
+            config_params = {}
+
+        ai_name = config_params.get("ai_name", "")
+        ai_role = config_params.get("ai_role", "")
+        ai_goals = config_params.get("ai_goals", [])
+
+        return cls(ai_name, ai_role, ai_goals)
+
+    def save(self, config_file=SAVE_FILE):
+        config = {"ai_name": self.ai_name, "ai_role": self.ai_role, "ai_goals": self.ai_goals}
+        with open(config_file, "w") as file:
+            yaml.dump(config, file)
+
+    def construct_full_prompt(self):
+        prompt_start = """Your decisions must always be made independently without seeking user assistance. Play to your strengths as an LLM and pursue simple strategies with no legal complications."""
+
+        # Construct full prompt
+        full_prompt = f"You are {self.ai_name}, {self.ai_role}\n{prompt_start}\n\nGOALS:\n\n"
+        for i, goal in enumerate(self.ai_goals):
+            full_prompt += f"{i+1}. {goal}\n"
+
+        full_prompt += f"\n\n{data.load_prompt()}"
+        return full_prompt
+
+----
+scripts/main.py
+import json
+import random
+import commands as cmd
+import memory as mem
+import data
+import chat
+from colorama import Fore, Style
+from spinner import Spinner
+import time
+import speak
+from enum import Enum, auto
+import sys
+from config import Config
+from json_parser import fix_and_parse_json
+from ai_config import AIConfig
+import traceback
+import yaml
+import argparse
+
+
+def print_to_console(
+        title,
+        title_color,
+        content,
+        speak_text=False,
+        min_typing_speed=0.05,
+        max_typing_speed=0.01):
+    global cfg
+    if speak_text and cfg.speak_mode:
+        speak.say_text(f"{title}. {content}")
+    print(title_color + title + " " + Style.RESET_ALL, end="")
+    if content:
+        if isinstance(content, list):
+            content = " ".join(content)
+        words = content.split()
+        for i, word in enumerate(words):
+            print(word, end="", flush=True)
+            if i < len(words) - 1:
+                print(" ", end="", flush=True)
+            typing_speed = random.uniform(min_typing_speed, max_typing_speed)
+            time.sleep(typing_speed)
+            # type faster after each word
+            min_typing_speed = min_typing_speed * 0.95
+            max_typing_speed = max_typing_speed * 0.95
+    print()
+
+
+def print_assistant_thoughts(assistant_reply):
+    global ai_name
+    global cfg
+    try:
+        # Parse and print Assistant response
+        assistant_reply_json = fix_and_parse_json(assistant_reply)
+
+        try:
+            assistant_thoughts = assistant_reply_json.get("thoughts")
+            if assistant_thoughts:
+                assistant_thoughts_text = assistant_thoughts.get("text")
+                assistant_thoughts_reasoning = assistant_thoughts.get("reasoning")
+                assistant_thoughts_plan = assistant_thoughts.get("plan")
+                assistant_thoughts_criticism = assistant_thoughts.get("criticism")
+                assistant_thoughts_speak = assistant_thoughts.get("speak")
+            else:
+                assistant_thoughts_text = None
+                assistant_thoughts_reasoning = None
+                assistant_thoughts_plan = None
+                assistant_thoughts_criticism = None
+                assistant_thoughts_speak = None
+        except Exception as e:
+            assistant_thoughts_text = "The AI's response was unreadable."
+
+        print_to_console(
+            f"{ai_name.upper()} THOUGHTS:",
+            Fore.YELLOW,
+            assistant_thoughts_text)
+        print_to_console(
+            "REASONING:",
+            Fore.YELLOW,
+            assistant_thoughts_reasoning)
+        if assistant_thoughts_plan:
+            print_to_console("PLAN:", Fore.YELLOW, "")
+            if assistant_thoughts_plan:
+                # If it's a list, join it into a string
+                if isinstance(assistant_thoughts_plan, list):
+                    assistant_thoughts_plan = "\n".join(assistant_thoughts_plan)
+                elif isinstance(assistant_thoughts_plan, dict):
+                    assistant_thoughts_plan = str(assistant_thoughts_plan)
+                    # Split the input_string using the newline character and dash
+                
+                lines = assistant_thoughts_plan.split('\n')
+
+                # Iterate through the lines and print each one with a bullet
+                # point
+                for line in lines:
+                    # Remove any "-" characters from the start of the line
+                    line = line.lstrip("- ")
+                    print_to_console("- ", Fore.GREEN, line.strip())
+        print_to_console(
+            "CRITICISM:",
+            Fore.YELLOW,
+            assistant_thoughts_criticism)
+
+        # Speak the assistant's thoughts
+        if cfg.speak_mode and assistant_thoughts_speak:
+            speak.say_text(assistant_thoughts_speak)
+
+    except json.decoder.JSONDecodeError:
+        print_to_console("Error: Invalid JSON\n", Fore.RED, assistant_reply)
+    # All other errors, return "Error: + error message"
+    except Exception as e:
+        call_stack = traceback.format_exc()
+        print_to_console("Error: \n", Fore.RED, call_stack)
+
+def load_variables(config_file="config.yaml"):
+    # Load variables from yaml file if it exists
+    try:
+        with open(config_file) as file:
+            config = yaml.load(file, Loader=yaml.FullLoader)
+        ai_name = config.get("ai_name")
+        ai_role = config.get("ai_role")
+        ai_goals = config.get("ai_goals")
+    except FileNotFoundError:
+        ai_name = ""
+        ai_role = ""
+        ai_goals = []
+
+    # Prompt the user for input if config file is missing or empty values
+    if not ai_name:
+        ai_name = input("Name your AI: ")
+        if ai_name == "":
+            ai_name = "Entrepreneur-GPT"
+
+    if not ai_role:        
+        ai_role = input(f"{ai_name} is: ")
+        if ai_role == "":
+            ai_role = "an AI designed to autonomously develop and run businesses with the sole goal of increasing your net worth."
+
+    if not ai_goals:
+        print("Enter up to 5 goals for your AI: ")
+        print("For example: \nIncrease net worth, Grow Twitter Account, Develop and manage multiple businesses autonomously'")
+        print("Enter nothing to load defaults, enter nothing when finished.")
+        ai_goals = []
+        for i in range(5):
+            ai_goal = input(f"Goal {i+1}: ")
+            if ai_goal == "":
+                break
+            ai_goals.append(ai_goal)
+        if len(ai_goals) == 0:
+            ai_goals = ["Increase net worth", "Grow Twitter Account", "Develop and manage multiple businesses autonomously"]
+         
+    # Save variables to yaml file
+    config = {"ai_name": ai_name, "ai_role": ai_role, "ai_goals": ai_goals}
+    with open(config_file, "w") as file:
+        documents = yaml.dump(config, file)
+
+    prompt = data.load_prompt()
+    prompt_start = """Your decisions must always be made independently without seeking user assistance. Play to your strengths as an LLM and pursue simple strategies with no legal complications."""
+
+    # Construct full prompt
+    full_prompt = f"You are {ai_name}, {ai_role}\n{prompt_start}\n\nGOALS:\n\n"
+    for i, goal in enumerate(ai_goals):
+        full_prompt += f"{i+1}. {goal}\n"
+
+    full_prompt += f"\n\n{prompt}"
+    return full_prompt
+
+
+def construct_prompt():
+    config = AIConfig.load()
+    if config.ai_name:
+        print_to_console(
+            f"Welcome back! ",
+            Fore.GREEN,
+            f"Would you like me to return to being {config.ai_name}?",
+            speak_text=True)
+        should_continue = input(f"""Continue with the last settings? 
+Name:  {config.ai_name}
+Role:  {config.ai_role}
+Goals: {config.ai_goals}  
+Continue (y/n): """)
+        if should_continue.lower() == "n":
+            config = AIConfig()
+
+    if not config.ai_name:         
+        config = prompt_user()
+        config.save()
+
+    # Get rid of this global:
+    global ai_name
+    ai_name = config.ai_name
+    
+    full_prompt = config.construct_full_prompt()
+    return full_prompt
+
+
+def prompt_user():
+    ai_name = ""
+    # Construct the prompt
+    print_to_console(
+        "Welcome to Auto-GPT! ",
+        Fore.GREEN,
+        "Enter the name of your AI and its role below. Entering nothing will load defaults.",
+        speak_text=True)
+
+    # Get AI Name from User
+    print_to_console(
+        "Name your AI: ",
+        Fore.GREEN,
+        "For example, 'Entrepreneur-GPT'")
+    ai_name = input("AI Name: ")
+    if ai_name == "":
+        ai_name = "Entrepreneur-GPT"
+
+    print_to_console(
+        f"{ai_name} here!",
+        Fore.LIGHTBLUE_EX,
+        "I am at your service.",
+        speak_text=True)
+
+    # Get AI Role from User
+    print_to_console(
+        "Describe your AI's role: ",
+        Fore.GREEN,
+        "For example, 'an AI designed to autonomously develop and run businesses with the sole goal of increasing your net worth.'")
+    ai_role = input(f"{ai_name} is: ")
+    if ai_role == "":
+        ai_role = "an AI designed to autonomously develop and run businesses with the sole goal of increasing your net worth."
+
+    # Enter up to 5 goals for the AI
+    print_to_console(
+        "Enter up to 5 goals for your AI: ",
+        Fore.GREEN,
+        "For example: \nIncrease net worth, Grow Twitter Account, Develop and manage multiple businesses autonomously'")
+    print("Enter nothing to load defaults, enter nothing when finished.", flush=True)
+    ai_goals = []
+    for i in range(5):
+        ai_goal = input(f"{Fore.LIGHTBLUE_EX}Goal{Style.RESET_ALL} {i+1}: ")
+        if ai_goal == "":
+            break
+        ai_goals.append(ai_goal)
+    if len(ai_goals) == 0:
+        ai_goals = ["Increase net worth", "Grow Twitter Account",
+                    "Develop and manage multiple businesses autonomously"]
+
+    config = AIConfig(ai_name, ai_role, ai_goals)
+    return config
+
+def parse_arguments():
+    global cfg
+    cfg.set_continuous_mode(False)
+    cfg.set_speak_mode(False)
+    
+    parser = argparse.ArgumentParser(description='Process arguments.')
+    parser.add_argument('--continuous', action='store_true', help='Enable Continuous Mode')
+    parser.add_argument('--speak', action='store_true', help='Enable Speak Mode')
+    parser.add_argument('--debug', action='store_true', help='Enable Debug Mode')
+    parser.add_argument('--gpt3only', action='store_true', help='Enable GPT3.5 Only Mode')
+    args = parser.parse_args()
+
+    if args.continuous:
+        print_to_console("Continuous Mode: ", Fore.RED, "ENABLED")
+        print_to_console(
+            "WARNING: ",
+            Fore.RED,
+            "Continuous mode is not recommended. It is potentially dangerous and may cause your AI to run forever or carry out actions you would not usually authorise. Use at your own risk.")
+        cfg.set_continuous_mode(True)
+
+    if args.speak:
+        print_to_console("Speak Mode: ", Fore.GREEN, "ENABLED")
+        cfg.set_speak_mode(True)
+
+    if args.gpt3only:
+        print_to_console("GPT3.5 Only Mode: ", Fore.GREEN, "ENABLED")
+        cfg.set_smart_llm_model(cfg.fast_llm_model)
+
+
+# TODO: fill in llm values here
+
+cfg = Config()
+parse_arguments()
+ai_name = ""
+prompt = construct_prompt()
+# print(prompt)
+# Initialize variables
+full_message_history = []
+result = None
+# Make a constant:
+user_input = "Determine which next command to use, and respond using the format specified above:"
+
+# Interaction Loop
+while True:
+    # Send message to AI, get response
+    with Spinner("Thinking... "):
+        assistant_reply = chat.chat_with_ai(
+            prompt,
+            user_input,
+            full_message_history,
+            mem.permanent_memory,
+            cfg.fast_token_limit) # TODO: This hardcodes the model to use GPT3.5. Make this an argument
+
+    # print("assistant reply: "+assistant_reply)
+    # Print Assistant thoughts
+    print_assistant_thoughts(assistant_reply)
+
+    # Get command name and arguments
+    try:
+        command_name, arguments = cmd.get_command(assistant_reply)
+    except Exception as e:
+        print_to_console("Error: \n", Fore.RED, str(e))
+
+    if not cfg.continuous_mode:
+        ### GET USER AUTHORIZATION TO EXECUTE COMMAND ###
+        # Get key press: Prompt the user to press enter to continue or escape
+        # to exit
+        user_input = ""
+        print_to_console(
+            "NEXT ACTION: ",
+            Fore.CYAN,
+            f"COMMAND = {Fore.CYAN}{command_name}{Style.RESET_ALL}  ARGUMENTS = {Fore.CYAN}{arguments}{Style.RESET_ALL}")
+        print(
+            "Enter 'y' to authorise command or 'n' to exit program...",
+            flush=True)
+        while True:
+            console_input = input(Fore.MAGENTA + "Input:" + Style.RESET_ALL)
+            if console_input.lower() == "y":
+                user_input = "GENERATE NEXT COMMAND JSON"
+                break
+            elif console_input.lower() == "n":
+                user_input = "EXIT"
+                break
+            else:
+                continue
+
+        if user_input != "GENERATE NEXT COMMAND JSON":
+            print("Exiting...", flush=True)
+            break
+
+        print_to_console(
+            "-=-=-=-=-=-=-= COMMAND AUTHORISED BY USER -=-=-=-=-=-=-=",
+            Fore.MAGENTA,
+            "")
+    else:
+        # Print command
+        print_to_console(
+            "NEXT ACTION: ",
+            Fore.CYAN,
+            f"COMMAND = {Fore.CYAN}{command_name}{Style.RESET_ALL}  ARGUMENTS = {Fore.CYAN}{arguments}{Style.RESET_ALL}")
+
+    # Execute command
+    if command_name.lower() != "error":
+        result = f"Command {command_name} returned: {cmd.execute_command(command_name, arguments)}"
+    else:
+        result = f"Command {command_name} threw the following error: " + arguments
+
+    # Check if there's a result from the command append it to the message
+    # history
+    if result is not None:
+        full_message_history.append(chat.create_chat_message("system", result))
+        print_to_console("SYSTEM: ", Fore.YELLOW, result)
+    else:
+        full_message_history.append(
+            chat.create_chat_message(
+                "system", "Unable to execute command"))
+        print_to_console("SYSTEM: ", Fore.YELLOW, "Unable to execute command")
+
+----
+scripts/spinner.py
+import sys
+import threading
+import itertools
+import time
+
+
+class Spinner:
+    def __init__(self, message="Loading...", delay=0.1):
+        self.spinner = itertools.cycle(['-', '/', '|', '\\'])
+        self.delay = delay
+        self.message = message
+        self.running = False
+        self.spinner_thread = None
+
+    def spin(self):
+        while self.running:
+            sys.stdout.write(next(self.spinner) + " " + self.message + "\r")
+            sys.stdout.flush()
+            time.sleep(self.delay)
+            sys.stdout.write('\b' * (len(self.message) + 2))
+
+    def __enter__(self):
+        self.running = True
+        self.spinner_thread = threading.Thread(target=self.spin)
+        self.spinner_thread.start()
+
+    def __exit__(self, exc_type, exc_value, exc_traceback):
+        self.running = False
+        self.spinner_thread.join()
+        sys.stdout.write('\r' + ' ' * (len(self.message) + 2) + '\r')
+        sys.stdout.flush()
+
+----
+scripts/file_operations.py
+import os
+import os.path
+
+# Set a dedicated folder for file I/O
+working_directory = "auto_gpt_workspace"
+
+if not os.path.exists(working_directory):
+    os.makedirs(working_directory)
+
+
+def safe_join(base, *paths):
+    new_path = os.path.join(base, *paths)
+    norm_new_path = os.path.normpath(new_path)
+
+    if os.path.commonprefix([base, norm_new_path]) != base:
+        raise ValueError("Attempted to access outside of working directory.")
+
+    return norm_new_path
+
+
+def read_file(filename):
+    try:
+        filepath = safe_join(working_directory, filename)
+        with open(filepath, "r") as f:
+            content = f.read()
+        return content
+    except Exception as e:
+        return "Error: " + str(e)
+
+
+def write_to_file(filename, text):
+    try:
+        filepath = safe_join(working_directory, filename)
+        with open(filepath, "w") as f:
+            f.write(text)
+        return "File written to successfully."
+    except Exception as e:
+        return "Error: " + str(e)
+
+
+def append_to_file(filename, text):
+    try:
+        filepath = safe_join(working_directory, filename)
+        with open(filepath, "a") as f:
+            f.write(text)
+        return "Text appended successfully."
+    except Exception as e:
+        return "Error: " + str(e)
+
+
+def delete_file(filename):
+    try:
+        filepath = safe_join(working_directory, filename)
+        os.remove(filepath)
+        return "File deleted successfully."
+    except Exception as e:
+        return "Error: " + str(e)
+
+----
+scripts/commands.py
+import browse
+import json
+import memory as mem
+import datetime
+import agent_manager as agents
+import speak
+from config import Config
+import ai_functions as ai
+from file_operations import read_file, write_to_file, append_to_file, delete_file
+from execute_code import execute_python_file
+from json_parser import fix_and_parse_json
+from googlesearch import search
+cfg = Config()
+
+
+def get_command(response):
+    try:
+        response_json = fix_and_parse_json(response)
+        
+        if "command" not in response_json:
+            return "Error:" , "Missing 'command' object in JSON"
+        
+        command = response_json["command"]
+
+        if "name" not in command:
+            return "Error:", "Missing 'name' field in 'command' object"
+        
+        command_name = command["name"]
+
+        # Use an empty dictionary if 'args' field is not present in 'command' object
+        arguments = command.get("args", {})
+
+        if not arguments:
+            arguments = {}
+
+        return command_name, arguments
+    except json.decoder.JSONDecodeError:
+        return "Error:", "Invalid JSON"
+    # All other errors, return "Error: + error message"
+    except Exception as e:
+        return "Error:", str(e)
+
+
+def execute_command(command_name, arguments):
+    try:
+        if command_name == "google":
+            return google_search(arguments["input"])
+        elif command_name == "memory_add":
+            return commit_memory(arguments["string"])
+        elif command_name == "memory_del":
+            return delete_memory(arguments["key"])
+        elif command_name == "memory_ovr":
+            return overwrite_memory(arguments["key"], arguments["string"])
+        elif command_name == "start_agent":
+            return start_agent(
+                arguments["name"],
+                arguments["task"],
+                arguments["prompt"])
+        elif command_name == "message_agent":
+            return message_agent(arguments["key"], arguments["message"])
+        elif command_name == "list_agents":
+            return list_agents()
+        elif command_name == "delete_agent":
+            return delete_agent(arguments["key"])
+        elif command_name == "get_text_summary":
+            return get_text_summary(arguments["url"])
+        elif command_name == "get_hyperlinks":
+            return get_hyperlinks(arguments["url"])
+        elif command_name == "read_file":
+            return read_file(arguments["file"])
+        elif command_name == "write_to_file":
+            return write_to_file(arguments["file"], arguments["text"])
+        elif command_name == "append_to_file":
+            return append_to_file(arguments["file"], arguments["text"])
+        elif command_name == "delete_file":
+            return delete_file(arguments["file"])
+        elif command_name == "browse_website":
+            return browse_website(arguments["url"])
+        # TODO: Change these to take in a file rather than pasted code, if
+        # non-file is given, return instructions "Input should be a python
+        # filepath, write your code to file and try again"
+        elif command_name == "evaluate_code":
+            return ai.evaluate_code(arguments["code"])
+        elif command_name == "improve_code":
+            return ai.improve_code(arguments["suggestions"], arguments["code"])
+        elif command_name == "write_tests":
+            return ai.write_tests(arguments["code"], arguments.get("focus"))
+        elif command_name == "execute_python_file":  # Add this command
+            return execute_python_file(arguments["file"])
+        elif command_name == "task_complete":
+            shutdown()
+        else:
+            return f"Unknown command {command_name}"
+    # All errors, return "Error: + error message"
+    except Exception as e:
+        return "Error: " + str(e)
+
+
+def get_datetime():
+    return "Current date and time: " + \
+        datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
+def google_search(query, num_results=8):
+    search_results = []
+    for j in search(query, num_results=num_results):
+        search_results.append(j)
+
+    return json.dumps(search_results, ensure_ascii=False, indent=4)
+
+
+def browse_website(url):
+    summary = get_text_summary(url)
+    links = get_hyperlinks(url)
+
+    # Limit links to 5
+    if len(links) > 5:
+        links = links[:5]
+
+    result = f"""Website Content Summary: {summary}\n\nLinks: {links}"""
+
+    return result
+
+
+def get_text_summary(url):
+    text = browse.scrape_text(url)
+    summary = browse.summarize_text(text)
+    return """ "Result" : """ + summary
+
+
+def get_hyperlinks(url):
+    link_list = browse.scrape_links(url)
+    return link_list
+
+
+def commit_memory(string):
+    _text = f"""Committing memory with string "{string}" """
+    mem.permanent_memory.append(string)
+    return _text
+
+
+def delete_memory(key):
+    if key >= 0 and key < len(mem.permanent_memory):
+        _text = "Deleting memory with key " + str(key)
+        del mem.permanent_memory[key]
+        print(_text)
+        return _text
+    else:
+        print("Invalid key, cannot delete memory.")
+        return None
+
+
+def overwrite_memory(key, string):
+    if int(key) >= 0 and key < len(mem.permanent_memory):
+        _text = "Overwriting memory with key " + \
+            str(key) + " and string " + string
+        mem.permanent_memory[key] = string
+        print(_text)
+        return _text
+    else:
+        print("Invalid key, cannot overwrite memory.")
+        return None
+
+
+def shutdown():
+    print("Shutting down...")
+    quit()
+
+
+def start_agent(name, task, prompt, model=cfg.fast_llm_model):
+    global cfg
+
+    # Remove underscores from name
+    voice_name = name.replace("_", " ")
+
+    first_message = f"""You are {name}.  Respond with: "Acknowledged"."""
+    agent_intro = f"{voice_name} here, Reporting for duty!"
+
+    # Create agent
+    if cfg.speak_mode:
+        speak.say_text(agent_intro, 1)
+    key, ack = agents.create_agent(task, first_message, model)
+
+    if cfg.speak_mode:
+        speak.say_text(f"Hello {voice_name}. Your task is as follows. {task}.")
+
+    # Assign task (prompt), get response
+    agent_response = message_agent(key, prompt)
+
+    return f"Agent {name} created with key {key}. First response: {agent_response}"
+
+
+def message_agent(key, message):
+    global cfg
+    agent_response = agents.message_agent(key, message)
+
+    # Speak response
+    if cfg.speak_mode:
+        speak.say_text(agent_response, 1)
+
+    return f"Agent {key} responded: {agent_response}"
+
+
+def list_agents():
+    return agents.list_agents()
+
+
+def delete_agent(key):
+    result = agents.delete_agent(key)
+    if not result:
+        return f"Agent {key} does not exist."
+    return f"Agent {key} deleted."
+----
+scripts/json_parser.py
+import json
+from call_ai_function import call_ai_function
+from config import Config
+cfg = Config()
+
+def fix_and_parse_json(json_str: str, try_to_fix_with_gpt: bool = True):
+    json_schema = """
+    {
+    "command": {
+        "name": "command name",
+        "args":{
+            "arg name": "value"
+        }
+    },
+    "thoughts":
+    {
+        "text": "thought",
+        "reasoning": "reasoning",
+        "plan": "- short bulleted\n- list that conveys\n- long-term plan",
+        "criticism": "constructive self-criticism",
+        "speak": "thoughts summary to say to user"
+    }
+    }
+    """
+
+    try:
+        return json.loads(json_str)
+    except Exception as e:
+        # Let's do something manually - sometimes GPT responds with something BEFORE the braces:
+        # "I'm sorry, I don't understand. Please try again."{"text": "I'm sorry, I don't understand. Please try again.", "confidence": 0.0}
+        # So let's try to find the first brace and then parse the rest of the string
+        try:
+          brace_index = json_str.index("{")
+          json_str = json_str[brace_index:]
+          last_brace_index = json_str.rindex("}")
+          json_str = json_str[:last_brace_index+1]
+          return json.loads(json_str)
+        except Exception as e:
+          if try_to_fix_with_gpt:
+            print(f"Warning: Failed to parse AI output, attempting to fix.\n If you see this warning frequently, it's likely that your prompt is confusing the AI. Try changing it up slightly.")
+            # Now try to fix this up using the ai_functions
+            ai_fixed_json = fix_json(json_str, json_schema, False)
+            if ai_fixed_json != "failed":
+              return json.loads(ai_fixed_json)
+            else:
+              print(f"Failed to fix ai output, telling the AI.") # This allows the AI to react to the error message, which usually results in it correcting its ways.
+              return json_str
+          else:
+            raise e
+        
+def fix_json(json_str: str, schema: str, debug=False) -> str:
+    # Try to fix the JSON using gpt:
+    function_string = "def fix_json(json_str: str, schema:str=None) -> str:"
+    args = [json_str, schema]
+    description_string = """Fixes the provided JSON string to make it parseable and fully complient with the provided schema.\n If an object or field specifed in the schema isn't contained within the correct JSON, it is ommited.\n This function is brilliant at guessing when the format is incorrect."""
+
+    # If it doesn't already start with a "`", add one:
+    if not json_str.startswith("`"):
+      json_str = "```json\n" + json_str + "\n```"
+    result_string = call_ai_function(
+        function_string, args, description_string, model=cfg.fast_llm_model
+    )
+    if debug:
+        print("------------ JSON FIX ATTEMPT ---------------")
+        print(f"Original JSON: {json_str}")
+        print("-----------")
+        print(f"Fixed JSON: {result_string}")
+        print("----------- END OF FIX ATTEMPT ----------------")
+    try:
+        return json.loads(result_string)
+    except:
+        # Get the call stack:
+        # import traceback
+        # call_stack = traceback.format_exc()
+        # print(f"Failed to fix JSON: '{json_str}' "+call_stack)
+        return "failed"
+----
+scripts/data.py
+import os
+from pathlib import Path
+
+
+def load_prompt():
+    try:
+        # get directory of this file:
+        file_dir = Path(os.path.dirname(os.path.realpath(__file__)))
+        data_dir = file_dir / "data"
+        prompt_file = data_dir / "prompt.txt"
+        # Load the promt from data/prompt.txt
+        with open(prompt_file, "r") as prompt_file:
+            prompt = prompt_file.read()
+
+        return prompt
+    except FileNotFoundError:
+        print("Error: Prompt file not found", flush=True)
+        return ""
+
+----
+scripts/execute_code.py
+import docker
+import os
+
+
+def execute_python_file(file):
+    workspace_folder = "auto_gpt_workspace"
+
+    print (f"Executing file '{file}' in workspace '{workspace_folder}'")
+
+    if not file.endswith(".py"):
+        return "Error: Invalid file type. Only .py files are allowed."
+
+    file_path = os.path.join(workspace_folder, file)
+
+    if not os.path.isfile(file_path):
+        return f"Error: File '{file}' does not exist."
+
+    try:
+        client = docker.from_env()
+
+        # You can replace 'python:3.8' with the desired Python image/version
+        # You can find available Python images on Docker Hub:
+        # https://hub.docker.com/_/python
+        container = client.containers.run(
+            'python:3.10',
+            f'python {file}',
+            volumes={
+                os.path.abspath(workspace_folder): {
+                    'bind': '/workspace',
+                    'mode': 'ro'}},
+            working_dir='/workspace',
+            stderr=True,
+            stdout=True,
+            detach=True,
+        )
+
+        output = container.wait()
+        logs = container.logs().decode('utf-8')
+        container.remove()
+
+        # print(f"Execution complete. Output: {output}")
+        # print(f"Logs: {logs}") 
+
+        return logs
+
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+----
+scripts/data/prompt.txt
+CONSTRAINTS:
+
+1. ~4000 word limit for memory. Your memory is short, so immidiately save important information to long term memory and code to files.
+2. No user assistance
+
+COMMANDS:
+
+1. Google Search: "google", args: "input": "<search>"
+2. Memory Add: "memory_add", args: "string": "<string>"
+3. Memory Delete: "memory_del", args: "key": "<key>"
+4. Memory Overwrite: "memory_ovr", args: "key": "<key>", "string": "<string>"
+5. Browse Website: "browse_website", args: "url": "<url>"
+6. Start GPT Agent: "start_agent",  args: "name": <name>, "task": "<short_task_desc>", "prompt": "<prompt>"
+7. Message GPT Agent: "message_agent", args: "key": "<key>", "message": "<message>"
+8. List GPT Agents: "list_agents", args: ""
+9. Delete GPT Agent: "delete_agent", args: "key": "<key>"
+10. Write to file: "write_to_file", args: "file": "<file>", "text": "<text>"
+11. Read file: "read_file", args: "file": "<file>"
+12. Append to file: "append_to_file", args: "file": "<file>", "text": "<text>"
+13. Delete file: "delete_file", args: "file": "<file>"
+14. Evaluate Code: "evaluate_code", args: "code": "<full _code_string>"
+15. Get Improved Code: "improve_code", args: "suggestions": "<list_of_suggestions>", "code": "<full_code_string>"
+16. Write Tests: "write_tests", args: "code": "<full_code_string>", "focus": "<list_of_focus_areas>"
+17. Execute Python File: "execute_python_file", args: "file": "<file>"
+18. Task Complete (Shutdown): "task_complete", args: "reason": "<reason>"
+
+RESOURCES:
+
+1. Internet access for searches and information gathering.
+2. Long Term memory management.
+3. GPT-3.5 powered Agents for delegation of simple tasks.
+4. File output.
+
+PERFORMANCE EVALUATION:
+
+1. Continuously review and analyze your actions to ensure you are performing to the best of your abilities. 
+2. Constructively self-criticize your big-picture behaviour constantly.
+3. Reflect on past decisions and strategies to refine your approach.
+4. Every command has a cost, so be smart and efficent. Aim to complete tasks in the least number of steps.
+
+You should only respond in JSON format as described below
+
+RESPONSE FORMAT:
+{
+    "command": {
+        "name": "command name",
+        "args":{
+            "arg name": "value"
+        }
+    },
+    "thoughts":
+    {
+        "text": "thought",
+        "reasoning": "reasoning",
+        "plan": "- short bulleted\n- list that conveys\n- long-term plan",
+        "criticism": "constructive self-criticism",
+        "speak": "thoughts summary to say to user"
+    }
+}
+
+Ensure the response can be parsed by Python json.loads
+--END--

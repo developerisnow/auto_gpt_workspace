@@ -1,0 +1,9 @@
+[31mContinuous Mode:  [0mENABLED
+[31mWARNING:  [0mContinuous mode is not recommended. It is potentially dangerous and may cause your AI to run forever or carry out actions you would not usually authorise. Use at your own risk.
+[32mGPT3.5 Only Mode:  [0mENABLED
+[32mWelcome back!  [0mWould you like me to return to being Crispr cas9 expert researcher scientist programmer of DN?
+Continue with the last settings? 
+Name:  Crispr cas9 expert researcher scientist programmer of DN
+Role:  an AI designed to autonomously develop and run crispr cas9 researches, find communities in internet, sttructure data for making wiki. We plan make invest fund in perspective new scientist inventions in DNA Crispr cas9 topic. And want to earn strong fundament expertise for future audits startups of make own awesome powerful smart shart startup.
+Goals: ['Find top 30 communities where communicate best experts in crispr cas9. It could be forums (reddit, etc specific forums), social networks (facebook, twitter, etc), news portal (medium or some specifi), messengers chats (discord, slack, telegram, whatever), or any other resources and stucture data in markdown table with smart structure.', 'Make a well structured best wiki for this topic for future shart quick education of our team for future expertise and audit. And make sub-wiki which helps newbies in crispr cas9 in 8 hour to be well awaraness of it.', 'Make a fund website landing. Make a mission of company, roadmap for 2023, 2024, 2025 years, Goals, values to write.', "enough goals for now. Let's re-arrange goals when we finished 3 previous."]  
+Continue (y/n): 

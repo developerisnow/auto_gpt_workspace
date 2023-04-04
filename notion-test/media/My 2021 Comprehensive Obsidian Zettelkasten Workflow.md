@@ -1,0 +1,120 @@
+---
+aliases: []
+status: []
+tags: []
+type: []
+---
+
+# Timest
+- [x] 1 0:00:00 Welcome
+- [x] 2 0:01:18 Intro
+- [x] 3 0:01:29 What We're talking about today
+- [x] 4 0:02:17 SUPPORT THE CHANNEL
+- [x] 5 0:02:37 An Important Caveat about the fluidity of a PKM system
+- [x] 6 0:03:56 WHAT IS A PKM SYSTEM
+- [ ] 7 0:04:56 What is your end goal
+- [ ] 8 0:06:27 quick capture
+- [ ] 9 0:08:44 Status tracking
+- [ ] 10 0:10:34 Search and filter how do you find anything
+- [ ] 11 0:12:11 https://publish.obsidian.md/bryan-jen...
+- [ ] 12 0:12:34 https://forum.obsidian.md/t/catalogin...
+- [ ] 13 0:12:40 https://brimwats.com/
+- [ ] 14 0:16:22 Association Traversal
+- [ ] 15 0:18:35 How rigid of a structure
+- [ ] 16 0:25:55 Temporal Components
+- [ ] 17 0:28:41 Input Types
+- [ ] 18 0:32:28 Curation
+- [ ] 19 0:33:54 https://notes.andymatuschak.org/
+- [ ] 20 0:36:57 Aesthetics
+- [ ] 21 0:40:30 https://bryanjenkstech.ck.page/d4ec07...
+- [ ] 22 0:40:40 Automation
+- [ ] 23 0:42:54 Smart Lens
+- [ ] 24 0:46:12 The how where what not the why
+- [ ] 25 0:49:11 WHATS IN MY PKM SYSTEM
+- [ ] 26 0:49:20 My Goals
+- [ ] 27 0:55:08 https://courses.santiyounger.com/p/lo...
+- [ ] 28 0:55:09 https://youtu.be/43PKm0TfyNk
+- [ ] 29 0:58:25 My Quick Capture Workflow
+- [ ] 30 1:00:06 Todoist
+- [ ] 31 1:02:30 I externalize as much of my brain into software as possible
+- [ ] 32 1:02:53 Note Templates
+- [ ] 33 1:03:19 https://publish.obsidian.md/bryan-jen...
+- [ ] 34 1:09:39 My meta Templater Template
+- [ ] 35 1:12:22 Kanban Boards
+- [ ] 36 1:13:55 The Dataview kanban board
+- [ ] 37 1:16:00 Mobile quick capture
+- [ ] 38 1:16:23 https://youtu.be/6Cg_5XT-X6M
+- [ ] 39 1:17:37 My Status Tracking Strategies
+- [ ] 40 1:22:31 How I Search and Filter My Notes
+- [ ] 41 1:36:18 How I Traverse My Notes
+- [ ] 42 1:47:54 https://bryanjenkstech.ck.page/d4ec07...
+- [ ] 43 1:48:50 How I Leverage Temporal Components
+- [ ] 44 1:52:54 LITERATURE NOTE PROCESSING
+- [ ] 45 1:53:28 BOOKS
+- [ ] 46 1:53:30 analog
+- [ ] 47 1:54:11 https://youtu.be/FLvcJyZiiUI
+- [ ] 48 1:55:38 https://textsniper.app/?ref=bryanjenks
+- [ ] 49 1:58:59 pdfs
+- [ ] 50 2:01:41 kindle ebooks
+- [ ] 51 2:04:03 TWEETS
+- [ ] 52 2:07:11 PODCASTS this one is a mess
+- [ ] 53 2:16:00 VIDEOS
+- [ ] 54 2:16:44 memex
+- [ ] 55 2:21:59 ARTICLES
+- [ ] 56 2:22:46 raindrop io
+- [ ] 57 2:27:24 my raindrop binary tags
+- [ ] 58 2:32:36 RESEARCH PAPERS
+- [ ] 59 2:34:12 Research Rabbit magic to come
+- [ ] 60 2:35:50 Zotero extension to get all your research papers
+- [ ] 61 2:39:34 Zotero workflow
+- [ ] 62 2:41:05 Zotero collections
+- [ ] 63 2:47:09 Writing in Gingkoapp
+- [ ] 64 2:49:20 academic networking services bonus
+- [ ] 65 2:52:19 THOUGHTS
+- [ ] 66 2:55:00 EVERGREEN NOTES
+- [ ] 67 2:56:45 Atomic notes
+- [ ] 68 2:58:25 evergreen notes
+- [ ] 69 2:59:34 API note titles
+- [ ] 70 3:01:25 external frameworks for thought
+- [ ] 71 3:02:14 https://heeris.id.au/2013/this-is-why...
+- [ ] 72 3:07:15 MAPS OF CONTENT
+- [ ] 73 3:13:25 ZETTELKASTEN PKM ADHD AND YOU
+- [ ] 74 3:22:01 WHAT PLUGINS AM I USING
+- [ ] 75 3:22:15 add codemirror matchbrackets js
+- [ ] 76 3:23:31 advanced tables
+- [ ] 77 3:26:09 Better word count
+- [ ] 78 3:26:41 calendar
+- [ ] 79 3:27:32 copy code block
+- [ ] 80 3:28:25 cycle through panes
+- [ ] 81 3:29:55 Dataview
+- [ ] 82 3:30:33 editor syntax highlight
+- [ ] 83 3:30:43 extended mathjax
+- [ ] 84 3:31:08 file explorer note count
+- [ ] 85 3:32:04 full-screen mode
+- [ ] 86 3:32:23 highlgiht public notes
+- [ ] 87 3:33:11 kanban
+- [ ] 88 3:33:35 kindle highlights
+- [ ] 89 3:33:56 metatable
+- [ ] 90 3:34:24 mindmap
+- [ ] 91 3:35:36 NLP dates
+- [ ] 92 3:36:10 pane relief
+- [ ] 93 3:36:42 paste URL
+- [ ] 94 3:37:21 periodic notes
+- [ ] 95 3:37:44 recent files
+- [ ] 96 3:37:59 relevant line number
+- [ ] 97 3:38:33 show current open note
+- [ ] 98 3:38:45 review
+- [ ] 99 3:39:43 sliding panes
+- [ ] 100 3:40:42 super charged links
+- [ ] 101 3:41:11 random note
+- [ ] 102 3:41:39 tag wrangler
+- [ ] 103 3:42:22 templater
+- [ ] 104 3:46:05 zoom
+- [ ] 105 3:47:24 RECOMMENDATIONS
+- [ ] 106 3:47:51 https://kit.co/tallguyjenks/books/how...
+- [ ] 107 3:51:34 https://kit.co/tallguyjenks/my-gear/a...
+- [ ] 108 3:53:31 https://www.researchrabbitapp.com/ (USE CODE "TALLGUYJENKS")
+- [ ] 109 3:56:03 https://textsniper.app/?ref=bryanjenks
+- [ ] 110 4:03:15 Closing
+- [ ] 111 4:03:19 THANK YOU, SPONSORS AND PATRONS
+- [ ] 112 4:04:05 outro
